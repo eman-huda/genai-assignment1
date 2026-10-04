@@ -1,0 +1,34 @@
+{
+  "search_space": {
+    "lr_joint": "log-uniform [1e-5, 3e-4]  (smaller than Task 2 training rates)",
+    "temperature": "log-uniform [0.3, 3.0]",
+    "lambda_ce": "log-uniform [0.01, 1.0]",
+    "lambda_bal": "log-uniform [1e-3, 1.0]",
+    "recon_alpha": "uniform [0.5, 0.95]  (L1 weight = a, SSIM weight = 1 - a)"
+  },
+  "fixed": {
+    "batch_size": 32,
+    "warmup_lr": 0.0003,
+    "trial_warmup_epochs": 1,
+    "trial_joint_epochs": 4
+  },
+  "n_trials": 21,
+  "states": {
+    "COMPLETE": 16,
+    "PRUNED": 4,
+    "RUNNING": 1
+  },
+  "best_trial": 13,
+  "best_value": 0.20865612104535103,
+  "best_params": {
+    "lr_joint": 0.00020920310558079246,
+    "temperature": 0.607262865948409,
+    "lambda_ce": 0.011505527372949756,
+    "lambda_bal": 0.03777453056264021,
+    "recon_alpha": 0.7032236725879175
+  },
+  "pruned_reasons": {
+    "median": 3,
+    "routing_collapse": 1
+  }
+}

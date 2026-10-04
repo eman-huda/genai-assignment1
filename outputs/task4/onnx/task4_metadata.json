@@ -1,0 +1,75 @@
+{
+  "task": "face_to_sketch",
+  "onnx_file": "face2sketch_generator.onnx",
+  "inputs": {
+    "photo": {
+      "shape": [
+        null,
+        3,
+        128,
+        128
+      ],
+      "range": [
+        0,
+        1
+      ],
+      "layout": "NCHW RGB float32"
+    },
+    "style": {
+      "shape": [
+        null
+      ],
+      "dtype": "int64",
+      "values": {
+        "0": "Style 1",
+        "1": "Style 2",
+        "2": "Style 3"
+      }
+    }
+  },
+  "outputs": {
+    "sketch": {
+      "shape": [
+        null,
+        3,
+        128,
+        128
+      ],
+      "range": [
+        0,
+        1
+      ]
+    }
+  },
+  "style_names": [
+    "Style 1",
+    "Style 2",
+    "Style 3"
+  ],
+  "preprocessing": "convert to RGB, resize to 128x128 (INTER_AREA), scale to [0,1]",
+  "config": {
+    "lr_g": 0.0004776148201168527,
+    "lr_d": 0.0003787340625619012,
+    "batch_size": 8,
+    "base_channels": 48,
+    "dropout": 0.4322165582594886,
+    "style_emb_dim": 4,
+    "lambda_l1": 23.342943449791612
+  },
+  "opset": 17,
+  "onnx_vs_pytorch_max_abs_diff": 2.7418136596679688e-06,
+  "cpu_latency_ms_batch1": {
+    "mean": 25.497063620059635,
+    "p95": 29.664555050521813
+  },
+  "test": {
+    "n": 1046.0,
+    "L1": 0.10657248646020889,
+    "PSNR": 15.537372589111328,
+    "SSIM": 0.4627625346183777,
+    "LPIPS": 0.21071021258831024,
+    "FID": 37.576072692871094,
+    "KID_mean": 0.03017542138695717,
+    "KID_std": 0.003306359052658081
+  }
+}

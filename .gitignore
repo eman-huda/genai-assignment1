@@ -1,15 +1,19 @@
-# Datasets and caches
+# Datasets and caches (too large; recreated by the notebooks)
 data/raw/
 data/*.npz
 data/*.zip
 
-# Trained models (hosted separately)
+# Trained models (downloaded by Docker Compose from the shared folder in .env)
 *.pt
 *.pth
 *.onnx
 
 # Training snapshots
 outputs/*/samples/
+
+# Build output and dependencies
+node_modules/
+frontend/dist/
 
 # Python and notebook clutter
 __pycache__/
@@ -19,3 +23,6 @@ __pycache__/
 # Experiment tracking local folders
 wandb/
 mlruns/
+
+# Uploaded archives
+*.zip

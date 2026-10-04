@@ -1,0 +1,16 @@
+{
+  "lr": 0.00029424149348354894,
+  "batch_size": 32,
+  "channels": [
+    16,
+    32,
+    64,
+    128
+  ],
+  "dropout": 0.11299312390843377,
+  "weight_decay": 1.1698032759430235e-05,
+  "channel_config": "small",
+  "epochs": 40,
+  "patience": 8,
+  "optuna_trial": 22
+}

@@ -1,0 +1,55 @@
+{
+  "task": "soft_moe_restoration",
+  "onnx_file": "soft_moe.onnx",
+  "input": {
+    "name": "input",
+    "shape": [
+      null,
+      3,
+      128,
+      128
+    ],
+    "range": [
+      0,
+      1
+    ],
+    "layout": "NCHW RGB float32"
+  },
+  "outputs": {
+    "restored": "NCHW RGB in [0,1]",
+    "weights": "softmax(logits/T), branch order below",
+    "logits": "raw gate logits"
+  },
+  "branches": [
+    "clean",
+    "salt_pepper",
+    "gaussian_blur",
+    "occlusion"
+  ],
+  "branch_labels": [
+    "Identity (clean)",
+    "Salt-and-pepper expert",
+    "Gaussian blur expert",
+    "Occlusion expert"
+  ],
+  "temperature": 0.607262865948409,
+  "config": {
+    "lr_joint": 0.00020920310558079246,
+    "temperature": 0.607262865948409,
+    "lambda_ce": 0.011505527372949756,
+    "lambda_bal": 0.03777453056264021,
+    "recon_alpha": 0.7032236725879175
+  },
+  "opset": 17,
+  "onnx_vs_pytorch_max_abs_diff": {
+    "restored": 5.364418029785156e-07,
+    "weights": 4.172325134277344e-07,
+    "logits": 8.58306884765625e-06
+  },
+  "cpu_latency_ms_batch1": {
+    "mean": 345.33942964000744,
+    "p95": 472.08951245074786
+  },
+  "test_ssim": 0.8045250177383423,
+  "test_psnr": 27.018186569213867
+}

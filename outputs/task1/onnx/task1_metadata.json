@@ -1,0 +1,68 @@
+{
+  "task": "task1_universal_restoration",
+  "onnx_file": "task1_universal_dae.onnx",
+  "input": {
+    "name": "input",
+    "shape": [
+      null,
+      3,
+      128,
+      128
+    ],
+    "dtype": "float32",
+    "range": [
+      0,
+      1
+    ],
+    "channel_order": "RGB",
+    "layout": "NCHW"
+  },
+  "output": {
+    "name": "output",
+    "shape": [
+      null,
+      3,
+      128,
+      128
+    ],
+    "range": [
+      0,
+      1
+    ]
+  },
+  "config": {
+    "lr": 0.00042057241220408675,
+    "batch_size": 16,
+    "base_channels": 48,
+    "latent_channels": 64,
+    "dropout": 0.2191038368562885,
+    "alpha": 0.5082890907740095,
+    "skip_channels": 0
+  },
+  "best_epoch": 59,
+  "latent_dim": 4096,
+  "params": 9308515,
+  "onnx_check": {
+    "n_images": 80,
+    "max_abs_diff": 7.152557373046875e-07,
+    "mean_abs_diff": 3.361692435532859e-08
+  },
+  "cpu_latency_ms": {
+    "onnxruntime": 110.79344490999574,
+    "pytorch": 140.29384841998763
+  },
+  "test_overall": {
+    "l1": 0.06640469282865524,
+    "psnr": 21.14366912841797,
+    "ssim": 0.7040696740150452,
+    "objective": 0.3623350188136101,
+    "ssim_clean": 0.7353131175041199,
+    "psnr_clean": 21.75405502319336,
+    "ssim_salt_pepper": 0.7313637137413025,
+    "psnr_salt_pepper": 21.79324722290039,
+    "ssim_gaussian_blur": 0.7166704535484314,
+    "psnr_gaussian_blur": 21.800357818603516,
+    "ssim_occlusion": 0.6537606120109558,
+    "psnr_occlusion": 19.633935928344727
+  }
+}

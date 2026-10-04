@@ -1,0 +1,9 @@
+{
+  "lr": 0.00042057241220408675,
+  "batch_size": 16,
+  "base_channels": 48,
+  "latent_channels": 64,
+  "dropout": 0.2191038368562885,
+  "alpha": 0.5082890907740095,
+  "skip_channels": 0
+}

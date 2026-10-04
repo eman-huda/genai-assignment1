@@ -1,0 +1,12 @@
+{
+  "lr": 0.0003125838887063886,
+  "batch_size": 16,
+  "latent_channels": 16,
+  "base_channels": 48,
+  "alpha": 0.5264855710980522,
+  "dropout": 0.2191038368562885,
+  "skip_channels": 0,
+  "epochs": 60,
+  "patience": 12,
+  "optuna_trial": 14
+}

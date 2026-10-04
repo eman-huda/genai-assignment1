@@ -1,0 +1,42 @@
+{
+  "search_space": {
+    "lr": "log-uniform [1e-4, 3e-3]",
+    "batch_size": [
+      16,
+      32,
+      64
+    ],
+    "latent_channels (bottleneck = latent_channels x 8 x 8)": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "base_channels (encoder c, 2c, 4c, 8c, 8c)": [
+      16,
+      32,
+      48
+    ],
+    "alpha (L1 weight)": "uniform [0.5, 0.95]",
+    "inherited from Task 1": {
+      "dropout": 0.2191038368562885,
+      "skip_channels": 0
+    }
+  },
+  "objective": "mean validation L1 + (1 - SSIM) of the 3 specialists (minimise)",
+  "epochs_per_trial": 8,
+  "sampler": "TPE, seed 42, 6 start-up trials",
+  "pruner": "MedianPruner(5 start-up trials, 2 warm-up epochs)",
+  "n_trials_total": 15,
+  "n_complete": 10,
+  "n_pruned": 5,
+  "best_trial": 14,
+  "best_value": 0.455048864086469,
+  "best_params": {
+    "lr": 0.0003125838887063886,
+    "batch_size": 16,
+    "latent_channels": 16,
+    "base_channels": 48,
+    "alpha": 0.5264855710980522
+  }
+}

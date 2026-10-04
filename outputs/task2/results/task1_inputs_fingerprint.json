@@ -1,0 +1,11 @@
+{
+  "shared code: corruptions": "c7ab87e3e7e7af47bb746bb094ece433",
+  "shared code: data": "c4757f917033104acd411760cfb3eb58",
+  "shared code: models": "97747e6d53f25aa57ce6102784880e49",
+  "shared code: losses_metrics": "73c80bcb348f2ffde6fbad5770fe219c",
+  "shared code: train_utils": "1c31ec199c4973ca8cdbdf8278f2f353",
+  "split (seed 42)": "b1def7c28297a647e3e9b8c9cc388333",
+  "validation manifest": "9b8e9affa827eb53289d10411da6bd5c",
+  "test manifest": "1459d9c95cc0da0dbcc21b906ab61892",
+  "Task 1 final config": "2840e6b000d088d0160228be5d354996"
+}

@@ -1,0 +1,21 @@
+\begin{tabular}{llrrrr}
+\toprule
+ &  & identity (clean) & salt-pepper expert & blur expert & occlusion expert \\
+type & severity &  &  &  &  \\
+\midrule
+clean & none & 0.987 & 0.000 & 0.002 & 0.011 \\
+\cline{1-6}
+\multirow[t]{3}{*}{salt_pepper} & low & 0.192 & 0.802 & 0.000 & 0.006 \\
+ & medium & 0.053 & 0.946 & 0.000 & 0.001 \\
+ & high & 0.023 & 0.977 & 0.000 & 0.000 \\
+\cline{1-6}
+\multirow[t]{3}{*}{gaussian_blur} & low & 0.884 & 0.000 & 0.111 & 0.005 \\
+ & medium & 0.739 & 0.000 & 0.256 & 0.004 \\
+ & high & 0.627 & 0.000 & 0.368 & 0.004 \\
+\cline{1-6}
+\multirow[t]{3}{*}{occlusion} & low & 0.695 & 0.000 & 0.000 & 0.305 \\
+ & medium & 0.555 & 0.000 & 0.000 & 0.445 \\
+ & high & 0.413 & 0.000 & 0.000 & 0.587 \\
+\cline{1-6}
+\bottomrule
+\end{tabular}

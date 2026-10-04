@@ -1,0 +1,12 @@
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+ & n & routing_acc & in_psnr & oracle_psnr & pred_psnr & in_ssim & oracle_ssim & pred_ssim & pred_identity_rate & ssim_lost_to_routing \\
+type &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+clean & 3669.0000 & 0.9888 & NaN & NaN & 21.8852 & 1.0000 & 1.0000 & 0.9972 & 0.9888 & 0.0028 \\
+salt_pepper & 11007.0000 & 1.0000 & 16.3841 & 21.8480 & 21.8480 & 0.3821 & 0.7362 & 0.7362 & 0.0000 & 0.0000 \\
+gaussian_blur & 11007.0000 & 0.9995 & 27.8209 & 21.8092 & 21.8131 & 0.8136 & 0.7271 & 0.7272 & 0.0005 & -0.0001 \\
+occlusion & 11007.0000 & 0.9995 & 13.6414 & 19.7696 & 19.7731 & 0.7127 & 0.6555 & 0.6555 & 0.0005 & -0.0000 \\
+all corrupted & 33021.0000 & 0.9997 & 19.2821 & 21.1423 & 21.1447 & 0.6361 & 0.7062 & 0.7063 & 0.0003 & -0.0001 \\
+\bottomrule
+\end{tabular}

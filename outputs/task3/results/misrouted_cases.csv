@@ -1,0 +1,4 @@
+type,severity,hard_pred_SSIM,hard_oracle_SSIM,soft_final_SSIM,count
+clean,none,0.7500349,1.0,0.9820308,41
+gaussian_blur,low,0.88360435,0.59922343,0.8794314,5
+occlusion,low,0.879107,0.8008638,0.9093025,6

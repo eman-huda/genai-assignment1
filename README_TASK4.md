@@ -66,6 +66,7 @@ Preprocessing: convert to RGB, resize to 128 x 128 with `cv2.INTER_AREA`, then d
 
 ## Trained model files
 
-Model files are too large for the repository. 
-https://drive.google.com/drive/folders/188KfofMLtAEAtYXUaHgof-BrKEfkPVwc?usp=sharing
+Model files are too large for the repository. They must be provided as either:
 
+- a documented download link (for example the W&B artefact `task4-face2sketch` or a Google Drive link), or
+- Git LFS: `git lfs track "*.onnx" "*.pt"`.

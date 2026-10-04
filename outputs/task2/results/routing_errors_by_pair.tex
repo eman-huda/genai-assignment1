@@ -1,0 +1,15 @@
+\begin{tabular}{llrrrr}
+\toprule
+ &  & n & mean_conf & psnr_lost & ssim_lost \\
+type & pred_name &  &  &  &  \\
+\midrule
+\multirow[t]{2}{*}{clean} & gaussian_blur & 14 & 0.7644 & NaN & 0.2210 \\
+ & occlusion & 27 & 0.7527 & NaN & 0.2650 \\
+\cline{1-6}
+gaussian_blur & clean & 5 & 0.7477 & -8.5396 & -0.2844 \\
+\cline{1-6}
+\multirow[t]{2}{*}{occlusion} & clean & 5 & 0.7326 & -7.7021 & -0.1151 \\
+ & gaussian_blur & 1 & 0.9501 & 0.0655 & 0.1059 \\
+\cline{1-6}
+\bottomrule
+\end{tabular}

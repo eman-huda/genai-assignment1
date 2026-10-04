@@ -11,6 +11,9 @@ from pathlib import Path
 
 MODELS = Path("/models")
 REQUIRED = ["task1_universal_dae.onnx", "task1_metadata.json",
+            "corruption_classifier.onnx", "specialist_salt_pepper.onnx", "specialist_gaussian_blur.onnx",
+            "specialist_occlusion.onnx", "hard_routing_meta.json",
+            "soft_moe.onnx", "task3_metadata.json",
             "face2sketch_generator.onnx", "task4_metadata.json"]
 
 

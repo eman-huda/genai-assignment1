@@ -1,0 +1,65 @@
+{
+  "study_name": "task1_universal_dae",
+  "objective": "val_L1 + (1 - val_SSIM), minimise",
+  "epochs_per_trial": 8,
+  "search_space": {
+    "lr": [
+      "float_log",
+      0.0001,
+      0.003
+    ],
+    "batch_size": [
+      "categorical",
+      [
+        16,
+        32,
+        64
+      ]
+    ],
+    "base_channels": [
+      "categorical",
+      [
+        16,
+        32,
+        48
+      ]
+    ],
+    "latent_channels": [
+      "categorical",
+      [
+        8,
+        16,
+        32,
+        64
+      ]
+    ],
+    "dropout": [
+      "float",
+      0.0,
+      0.3
+    ],
+    "alpha": [
+      "float",
+      0.5,
+      0.95
+    ]
+  },
+  "n_trials": 25,
+  "n_complete": 23,
+  "n_pruned": 2,
+  "best_trial": 18,
+  "best_value": 0.456086203455925,
+  "best_params": {
+    "lr": 0.00042057241220408675,
+    "batch_size": 16,
+    "base_channels": 48,
+    "latent_channels": 64,
+    "dropout": 0.2191038368562885,
+    "alpha": 0.5082890907740095
+  },
+  "best_user_attrs": {
+    "val_l1": 0.07474558055400848,
+    "val_psnr": 20.134885787963867,
+    "val_ssim": 0.6186593770980835
+  }
+}

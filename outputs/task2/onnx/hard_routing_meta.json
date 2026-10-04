@@ -1,0 +1,84 @@
+{
+  "task": "Task 2 - Hard-Routed Restoration",
+  "opset": 17,
+  "class_order": [
+    "clean",
+    "salt_pepper",
+    "gaussian_blur",
+    "occlusion"
+  ],
+  "classifier": {
+    "file": "corruption_classifier.onnx",
+    "input": "input",
+    "outputs": [
+      "logits",
+      "probs"
+    ],
+    "config": {
+      "channels": [
+        16,
+        32,
+        64,
+        128
+      ],
+      "dropout": 0.11299312390843377
+    }
+  },
+  "experts": {
+    "salt_pepper": "specialist_salt_pepper.onnx",
+    "gaussian_blur": "specialist_gaussian_blur.onnx",
+    "occlusion": "specialist_occlusion.onnx",
+    "clean": "identity (return input unchanged)"
+  },
+  "routing_rule": "pred = argmax(probs); clean -> identity, otherwise run experts[class_order[pred]]",
+  "input": {
+    "shape": [
+      "batch",
+      3,
+      128,
+      128
+    ],
+    "dtype": "float32",
+    "layout": "NCHW",
+    "color": "RGB",
+    "range": [
+      0,
+      1
+    ],
+    "preprocess": "convert to RGB, resize to 128x128 (bicubic), divide by 255"
+  },
+  "specialist_config": {
+    "lr": 0.0003125838887063886,
+    "batch_size": 16,
+    "latent_channels": 16,
+    "base_channels": 48,
+    "alpha": 0.5264855710980522,
+    "dropout": 0.2191038368562885,
+    "skip_channels": 0,
+    "epochs": 60,
+    "patience": 12,
+    "optuna_trial": 14
+  },
+  "classifier_config": {
+    "lr": 0.00029424149348354894,
+    "batch_size": 32,
+    "channels": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "dropout": 0.11299312390843377,
+    "weight_decay": 1.1698032759430235e-05,
+    "channel_config": "small",
+    "epochs": 40,
+    "patience": 8,
+    "optuna_trial": 22
+  },
+  "cpu_ms": {
+    "classifier": 5.8852549199946225,
+    "specialist_salt_pepper": 133.58419896001578,
+    "specialist_gaussian_blur": 120.95479785999487,
+    "specialist_occlusion": 110.07874757997342
+  }
+}

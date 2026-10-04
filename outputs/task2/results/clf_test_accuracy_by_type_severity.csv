@@ -1,0 +1,5 @@
+type,high,low,medium,none
+clean,,,,0.9888252929953666
+gaussian_blur,1.0,0.9986372308530935,1.0,
+occlusion,1.0,0.9983646770237122,1.0,
+salt_pepper,1.0,1.0,1.0,

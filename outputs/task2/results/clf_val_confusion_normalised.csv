@@ -1,0 +1,5 @@
+,clean,salt_pepper,gaussian_blur,occlusion
+clean,1.0,0.0,0.0,0.0
+salt_pepper,0.0,1.0,0.0,0.0
+gaussian_blur,0.005434782608695652,0.0,0.9945652173913043,0.0
+occlusion,0.0,0.0,0.0,1.0

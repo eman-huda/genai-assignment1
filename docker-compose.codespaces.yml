@@ -1,0 +1,13 @@
+# Codespaces only. Docker's internal network does not work in some codespaces, so every
+# service uses the codespace's own network instead. Start with:  ./codespaces-up.sh
+services:
+  models:
+    network_mode: host
+  backend:
+    network_mode: host
+  frontend:
+    network_mode: host
+    ports: !reset []
+    environment:
+      LISTEN_PORT: "8080"
+      API_UPSTREAM: 127.0.0.1:8000

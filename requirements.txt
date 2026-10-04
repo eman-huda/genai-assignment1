@@ -1,0 +1,20 @@
+# Training, evaluation and export (Tasks 1 to 4). The web app has its own: backend/requirements.txt
+torch>=2.2
+torchvision>=0.17
+numpy
+pandas
+scikit-learn
+matplotlib
+pillow
+opencv-python-headless
+pyyaml
+optuna>=3.6
+wandb
+pytorch-msssim
+lpips
+torchmetrics
+torch-fidelity
+onnx
+onnxscript
+onnxruntime
+gdown

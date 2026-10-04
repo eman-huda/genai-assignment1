@@ -1,0 +1,54 @@
+{
+  "search_space": {
+    "lr": "log-uniform [1e-4, 3e-3]",
+    "batch_size": [
+      32,
+      64,
+      128
+    ],
+    "channels": {
+      "small": [
+        16,
+        32,
+        64,
+        128
+      ],
+      "medium": [
+        32,
+        64,
+        128,
+        256
+      ],
+      "wide": [
+        48,
+        96,
+        192,
+        256
+      ],
+      "deep_narrow": [
+        32,
+        64,
+        96,
+        128
+      ]
+    },
+    "dropout": "uniform [0.0, 0.5]",
+    "weight_decay": "log-uniform [1e-6, 1e-2]"
+  },
+  "objective": "validation macro-F1 (maximise)",
+  "epochs_per_trial": 8,
+  "sampler": "TPE, seed 42, 6 start-up trials",
+  "pruner": "MedianPruner(5 start-up trials, 2 warm-up epochs)",
+  "n_trials_total": 25,
+  "n_complete": 11,
+  "n_pruned": 14,
+  "best_trial": 22,
+  "best_value": 1.0,
+  "best_params": {
+    "lr": 0.00029424149348354894,
+    "batch_size": 32,
+    "channels": "small",
+    "dropout": 0.11299312390843377,
+    "weight_decay": 1.1698032759430235e-05
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "GenAI Assignment 1",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "forwardPorts": [8080],
+  "portsAttributes": { "8080": { "label": "Restore & Sketch app", "onAutoForward": "notify" } }
+}
