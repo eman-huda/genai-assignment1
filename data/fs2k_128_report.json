@@ -1,0 +1,22 @@
+{
+  "train": {
+    "pairs": 1058,
+    "missing": [],
+    "photo_sketch_size_mismatch": 0,
+    "style_counts": [
+      357,
+      350,
+      351
+    ]
+  },
+  "test": {
+    "pairs": 1046,
+    "missing": [],
+    "photo_sketch_size_mismatch": 0,
+    "style_counts": [
+      619,
+      381,
+      46
+    ]
+  }
+}

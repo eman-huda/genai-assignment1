@@ -1,0 +1,29 @@
+{
+  "search_space": {
+    "lr_g": "log-uniform [5e-5, 5e-4]",
+    "lr_d": "log-uniform [2e-5, 5e-4]",
+    "batch_size": "{4, 8, 16}",
+    "base_channels": "{32, 48, 64}",
+    "dropout": "uniform [0.0, 0.5] (generator decoder)",
+    "style_emb_dim": "{4, 8, 16, 32}",
+    "lambda_l1": "log-uniform [10, 200]"
+  },
+  "objective": "val_LPIPS + (1 - val_SSIM)",
+  "trial_epochs": 20,
+  "n_trials": 16,
+  "states": {
+    "COMPLETE": 8,
+    "PRUNED": 8
+  },
+  "best_trial": 12,
+  "best_value": 0.8122401833534241,
+  "best_params": {
+    "lr_g": 0.0004776148201168527,
+    "lr_d": 0.0003787340625619012,
+    "batch_size": 8,
+    "base_channels": 48,
+    "dropout": 0.4322165582594886,
+    "style_emb_dim": 4,
+    "lambda_l1": 23.342943449791612
+  }
+}

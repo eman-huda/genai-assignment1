@@ -1,0 +1,19 @@
+# Task 4 training, evaluation and export (merge into the repository's requirements.txt)
+torch>=2.2
+torchvision>=0.17
+numpy
+opencv-python-headless
+pandas
+scikit-learn
+pyyaml
+matplotlib
+optuna>=3.6
+wandb
+pytorch-msssim
+lpips
+torchmetrics
+torch-fidelity
+onnx
+onnxscript
+onnxruntime
+gdown

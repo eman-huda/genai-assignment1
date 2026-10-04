@@ -1,0 +1,34 @@
+# Task 4: style-conditioned face-to-sketch cGAN. All paths are relative to the repository root.
+seed: 42
+image_size: 128
+paths:
+  fs2k_dir: data/raw/FS2K            # extracted official release (photo/, sketch/, anno_*.json)
+  cache: data/fs2k_128.npz
+  split: data/fs2k_split_seed42.json
+  out_dir: outputs/task4
+val_fraction: 0.15                   # of the official training portion, stratified by style
+num_workers: 2
+wandb_project: genai-assignment1
+
+optuna:
+  study_name: task4_cgan
+  trials: 16
+  epochs_per_trial: 20
+  eval_every: 4
+  pruner: {n_startup_trials: 4, n_warmup_steps: 8}
+  objective: val_LPIPS + (1 - val_SSIM)
+  search_space:
+    lr_g: {type: float, low: 5.0e-5, high: 5.0e-4, log: true}
+    lr_d: {type: float, low: 2.0e-5, high: 5.0e-4, log: true}
+    batch_size: {type: categorical, choices: [4, 8, 16]}
+    base_channels: {type: categorical, choices: [32, 48, 64]}
+    dropout: {type: float, low: 0.0, high: 0.5}
+    style_emb_dim: {type: categorical, choices: [4, 8, 16, 32]}
+    lambda_l1: {type: float, low: 10.0, high: 200.0, log: true}
+  reference_trial: {lr_g: 2.0e-4, lr_d: 2.0e-4, batch_size: 8, base_channels: 64,
+                    dropout: 0.5, style_emb_dim: 8, lambda_l1: 100.0}
+
+final:
+  epochs: 200                        # constant LR for 100 epochs, then linear decay to 0
+  eval_every: 5
+  sample_every: 10
