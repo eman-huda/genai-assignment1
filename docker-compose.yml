@@ -1,0 +1,35 @@
+# Start everything with:  docker compose up --build
+# Then open http://localhost:8080
+services:
+  models:
+    image: python:3.12-slim
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    environment:
+      MODELS_FOLDER_URL: ${MODELS_FOLDER_URL:-}
+    volumes:
+      - ./models:/models
+      - ./deploy:/deploy:ro
+    command: ["python", "/deploy/fetch_models.py"]
+
+  backend:
+    build: ./backend
+    environment:
+      MODELS_DIR: /app/models
+      ORT_THREADS: "2"
+    volumes:
+      - ./models:/app/models:ro
+    depends_on:
+      models:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
